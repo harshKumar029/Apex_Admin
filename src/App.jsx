@@ -17,6 +17,10 @@ import WithdrawalRequest from './Components/WithdrawalRequest';
 import Mywebsite from './Components/Mywebsite';
 import ViewDetails from './Components/LeadsViewDetails';
 import EditDetails from './Components/LeadsEditDetails';
+import AgentsViewDetails from './Components/AgentsViewDetails';
+import LeadsEditDetails from './Components/LeadsEditDetails';
+import AgentsEditDetails from './Components/AgentsEditDetails';
+import AgentWithdrawHistory from './Components/AgentWithdrawHistory';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,11 +52,13 @@ function App() {
         <Route path="/Mywebsite" element={<AuthLayout><Header title="My website"><Mywebsite /></Header></AuthLayout>} />
         <Route path="/Setting" element={<AuthLayout><Header title="Setting"><Setting /></Header></AuthLayout>} />
 
-        <Route path="/ManageLeads/ViewLeadsDetails" element={<AuthLayout><Header title="ManageLeads"><ViewDetails /></Header></AuthLayout>} />
-        <Route path="/ManageLeads/EditLeadsDetails" element={<AuthLayout><Header title="ManageLeads"><EditDetails /></Header></AuthLayout>} />
+        <Route path="/ManageLeads/ViewLeadsDetails" element={<AuthLayout><Header title="Manage Leads"><ViewDetails /></Header></AuthLayout>} />
+        <Route path="/ManageLeads/EditLeadsDetails" element={<AuthLayout><Header title="Manage Leads"><EditDetails /></Header></AuthLayout>} />
+        <Route path="/ManageAgents/ViewManageAgents" element={<AuthLayout><Header title="Manage Agents"><AgentsViewDetails /></Header></AuthLayout>} />
+        <Route path="/ManageAgents/EditManageAgents" element={<AuthLayout><Header title="Manage Agents">< AgentsEditDetails/></Header></AuthLayout>} />
+        <Route path="/ManageAgents/AgentWithdrawHistory" element={<AuthLayout><Header title="Manage Agents">< AgentWithdrawHistory/></Header></AuthLayout>} />
       </Routes>
     </Router>
-  );
-}
+  )}
 
 export default App;
