@@ -21,7 +21,7 @@ const WithdrawalRequest = () => {
 
   const tableData = {
     AllLeads: [
-      { id: 379, name: 'Janet Jackson', Contact: '9012345678', Email: 'janet.jackson@example.com', Status: 'Pending', approveStatus: true, AmountRequested: '1500' },
+      { id: 379, name: 'Janet Jackon', Contact: '9012345678', Email: 'janet.jackson@example.com', Status: 'Pending', approveStatus: true, AmountRequested: '1500' },
       { id: 377, name: 'Johnnie Walker', Contact: '7890123456', Email: 'johnnie.walker@example.com', Status: 'Pending', approveStatus: true, AmountRequested: '2500' },
       { id: 434, name: 'Johnny Walker', Contact: '5678901234', Email: 'johnny.walker@example.com', Status: 'Pending', approveStatus: true, AmountRequested: '1800' },
       { id: 855, name: 'Jim Beam', Contact: '3456789012', Email: 'jim.beam@example.com', Status: 'Pending', approveStatus: true, AmountRequested: '2200' },
@@ -128,24 +128,49 @@ const WithdrawalRequest = () => {
         {/* Mobile Card Layout */}
         <div className="flex flex-col space-y-4 mb-3">
           {currentItems.map((row) => (
-            <div key={row.id} className="bg-white shadow-md rounded-lg p-4">
-              <div className="flex justify-between mb-2">
-                <span className="font-bold">Name:</span>
-                <span>{row.name}</span>
-              </div>
-              <div className="flex justify-between mb-2">
-                <span className="font-bold">Contact:</span>
-                <span>{row.Contact}</span>
-              </div>
-              <div className="flex justify-between mb-2">
-                <span className="font-bold">Email:</span>
-                <span>{row.Email}</span>
-              </div>
-              <div className="flex justify-between mb-2">
-                <span className="font-bold">Status:</span>
-                <span>{row.Status}</span>
-              </div>
+            <div key={row.id} className="bg-white shadow-md rounded-lg ">
+            <div className=' p-4'>
+            <div className=' flex justify-between top-0 '>
+              <section className=' flex gap-3'>
+                <section>
+                  <p className="h-12 w-12 rounded-full font-normal text-white text-sm bg-[#063E50] flex items-center justify-center">
+                    RV
+                  </p>
+                </section>
+                <section className=' space-y-1'>
+                  <p className=' font-medium text-2xl text-[#063E50]'>{row.name}</p>
+                  <p className='text-[#212529]'>+91 {row.Contact}</p>
+                  <p className='text-[#212529]'>Lead ID: {row.id}</p>
+                  <p className='text-[#8B7010]'>Request Amount: ₹{row.AmountRequestedn}</p>
+                </section>
+              </section>
             </div>
+            <div className=' flex justify-between my-4'>
+              <p className=' inline-flex items-center gap-3'>
+                <p className=' text-xl text-[#495057] font-normal'>Status</p>
+                <button
+                  className={`px-4 py-1 rounded-full 
+                  ${row.Status === 'Pending' ? 'bg-[#D3B6262E] text-[#D3B626]' : 'text-[#718EBF]'}
+                  ${row.Status === 'Approved' ? 'bg-[#28A7452E] text-[#28A745]' : 'text-[#718EBF]'}
+                  ${row.Status === 'Rejected' ? 'bg-[#DC35452E] text-[#DC3545]' : 'text-[#718EBF]'}
+                  ${row.Status === 'In Process' ? 'bg-[#FBB34933] text-[#FBB349]' : 'text-[#718EBF]'}
+                  `}>
+                  {row.Status}
+                </button>
+              </p>
+              <p className=' inline-flex items-center gap-3'>
+                <p className=' text-xl text-[#495057] font-normal'>Action</p>
+                <button
+                  className={`px-3 py-[2px] rounded-full 
+              ${row.approveStatus === true ? 'bg-[#063E50] text-[#FFFFFF]' : 'bg-[#ADB5BD] text-[#718EBF]'}
+            `}
+                >
+                  Approve
+                </button>
+              </p>
+            </div>
+            </div>
+          </div>
           ))}
         </div>
       </div>
@@ -154,25 +179,25 @@ const WithdrawalRequest = () => {
         {/* Table layout for larger screens */}
         <table className="min-w-full bg-white text-left">
           <thead className='text-[#063E50] font-medium text-base border-b border-[#DEE2E6]'>
-            <tr style={{textAlign:'-webkit-center'}}>
-              <th className="px-4 py-2">Lead Id</th>
-              <th className="px-4 py-2">Name</th>
-              <th className="px-4 py-2">Contact</th>
-              <th className="px-4 py-2">Email</th>
-              <th className="px-4 py-2">Amount Requested</th>
-              <th className="px-4 py-2">Status</th>
-              <th className="px-4 py-2">Actions</th>
+            <tr>
+              <th className=" py-2">Lead Id</th>
+              <th style={{textAlign:'-webkit-center'}} className="px-4 py-2">Name</th>
+              <th style={{textAlign:'-webkit-center'}} className="px-4 py-2">Contact</th>
+              <th style={{textAlign:'-webkit-center'}} className="px-4 py-2">Email</th>
+              <th style={{textAlign:'-webkit-center'}} className="px-4 py-2">Amount Requested</th>
+              <th style={{textAlign:'-webkit-center'}} className="px-4 py-2">Status</th>
+              <th  className="px-4 py-2">Actions</th>
             </tr>
           </thead>
           <tbody className='text-left text-base text-[#212529] font-normal'>
             {currentItems.map((row, index) => (
-              <tr key={row.id} className=' text-sm' style={{textAlign:'-webkit-center'}}>
+              <tr key={row.id} className=' text-sm'>
                 <td className="px-4 py-2">{row.id}</td>
-                <td className="px-4 py-2">{row.name}</td>
-                <td className="px-4 py-2">{row.Contact}</td>
-                <td className="px-4 py-2">{row.Email}</td>
-                <td className="px-4 py-4">₹{row.AmountRequested}</td>
-                <td>
+                <td style={{textAlign:'-webkit-center'}} className="px-4 py-2">{row.name}</td>
+                <td style={{textAlign:'-webkit-center'}} className="px-4 py-2">{row.Contact}</td>
+                <td style={{textAlign:'-webkit-center'}} className="px-4 py-2">{row.Email}</td>
+                <td style={{textAlign:'-webkit-center'}} className="px-4 py-4">₹{row.AmountRequested}</td>
+                <td style={{textAlign:'-webkit-center'}}>
                   <button
                     className={`px-4 py-1 rounded-full 
                     ${row.Status === 'Pending' ? 'bg-[#D3B6262E] text-[#D3B626]' : 'text-[#718EBF]'}

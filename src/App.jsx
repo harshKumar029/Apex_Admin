@@ -45,7 +45,7 @@ function App() {
 
         {/* Protected Route */}
         {/* Dashboard */}
-        <Route path="/" element={<AuthLayout><Header title="Dashboard"><Dashboard /></Header></AuthLayout>} />
+        <Route path="/" element={<AuthLayout><Header showSearch='false' title="Dashboard"><Dashboard /></Header></AuthLayout>} />
         <Route path="/ManageLeads" element={<AuthLayout><Header title="Manage Leads"><ManageLeads /></Header></AuthLayout>} />
         <Route path="/ManageAgents" element={<AuthLayout><Header title="Manage Agents"><ManageAgents /></Header></AuthLayout>} />
         <Route path="/WithdrawalRequest" element={<AuthLayout><Header title="Withdrawal Request"><WithdrawalRequest /></Header></AuthLayout>} />

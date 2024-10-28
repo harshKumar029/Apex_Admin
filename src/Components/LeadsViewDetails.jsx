@@ -37,7 +37,7 @@ const ViewDetails = () => {
                         </svg>
                     </div>
                     <div>
-                        <h2 className="text-[#343C6A] font-medium text-2xl">Lead Details</h2>
+                        <h2 className="text-[#343C6A] font-medium text-2xl">View Details</h2>
                         <p className="text-[#495057] font-light text-base">
                             Please go through the details
                         </p>
@@ -46,16 +46,16 @@ const ViewDetails = () => {
             </div>
 
             {/* Displaying details */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
                 {inputFields.map((field, index) => (
-                    <div key={index} className="  flex gap-6 items-center">
+                    <div key={index} className=" gap-3 flex items-center">
                         <h3 className=" text-base font-normal text-[#212529]">{field.label}</h3>
                         <p
-                            className={`text-base px-4 rounded-full 
-                        ${field.placeholder === 'Pending' ? 'bg-[#D3B6262E] text-[#D3B626]' : 'text-[#718EBF]'}
-                        ${field.placeholder === 'Approved' ? 'bg-[#28A7452E] text-[#28A745]' : 'text-[#718EBF]'}
-                        ${field.placeholder === 'Rejected' ? 'bg-[#DC35452E] text-[#DC3545]' : 'text-[#718EBF]'}
-                        ${field.placeholder === 'In Process' ? 'bg-[#FBB34933] text-[#FBB349]' : 'text-[#718EBF]'}
+                            className={`text-base  rounded-full 
+                        ${field.placeholder === 'Pending' ? 'bg-[#D3B6262E] text-[#D3B626] px-4' : 'text-[#718EBF]'}
+                        ${field.placeholder === 'Approved' ? 'bg-[#28A7452E] text-[#28A745] px-4' : 'text-[#718EBF]'}
+                        ${field.placeholder === 'Rejected' ? 'bg-[#DC35452E] text-[#DC3545] px-4' : 'text-[#718EBF]'}
+                        ${field.placeholder === 'In Process' ? 'bg-[#FBB34933] text-[#FBB349] px-4' : 'text-[#718EBF]'}
                     `}
                         >{field.placeholder}</p>
                     </div>

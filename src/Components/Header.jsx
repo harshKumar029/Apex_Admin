@@ -2,11 +2,13 @@ import React, { useRef, useEffect } from 'react';
 import Userimg from "../assets/img/Userimg.svg"
 import Searchbar from './Searchbar';
 import { useSidebar } from '../ContextApi';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = ({ title, showSearch = true, children }) => {
     const { isOpenProfile, setIsOpenProfile, setIsOpen } = useSidebar();
     const ProfileRef = useRef(null);
+    const location = useLocation();
+    const isDashboard = location.pathname === '/';
 
     const toggleDropdown = () => {
         setIsOpenProfile(!isOpenProfile);
@@ -48,7 +50,7 @@ const Header = ({ title, showSearch = true, children }) => {
                 <div className="flex items-center sm:space-x-10">
                     {/* Search Input */}
                     <div className='hidden sm:block'>
-                        {!showSearch && (
+                        {!isDashboard  && (
                             <Searchbar />
                         )}
                     </div>

@@ -67,7 +67,7 @@ const AgentWithdrawHistory = () => {
                     </div>
                 </div>
                 <div>
-                    <div className=' flex justify-between'>
+                    <div className=' flex flex-col sm:flex-row justify-between'>
                         <div className=' inline-flex gap-4'>
                             <h3 className=' text-base font-normal text-[#212529]'>Agent name</h3>
                             <p className=' text-[#718EBF] text-base'>Rohit Sharma</p>

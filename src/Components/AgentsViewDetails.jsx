@@ -42,17 +42,17 @@ const AgentsViewDetails = () => {
                 </div>
     
                 {/* Displaying details */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-6">
                     {inputFields.map((field, index) => (
-                        <div key={index} className="  flex gap-6 items-center">
+                        <div key={index} className="  flex gap-4 items-center">
                             <h3 className=" text-base font-normal text-[#212529]">{field.label}</h3>
                             <p
-                                className={`text-base px-4 rounded-full 
-                            ${field.placeholder === 'Diamond' ? 'bg-gradient-to-t from-[#44A08D] to-[#093637] text-[#FFFFFF]' : 'text-[#718EBF]'}
-                            ${field.placeholder === 'Copper' ? 'bg-gradient-to-t from-[#554023] to-[#C99846] text-[#FFFFFF]' : 'text-[#718EBF]'}
-                            ${field.placeholder === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#363636]' : 'text-[#718EBF]'}
-                            ${field.placeholder === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#282a2c]' : 'text-[#718EBF]'}
-                            ${field.placeholder === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#282a2c]' : 'text-[#718EBF]'}
+                                className={`text-base  rounded-full 
+                            ${field.placeholder === 'Diamond' ? 'bg-gradient-to-t from-[#44A08D] to-[#093637] text-[#FFFFFF] px-4' : 'text-[#718EBF]'}
+                            ${field.placeholder === 'Copper' ? 'bg-gradient-to-t from-[#554023] to-[#C99846] text-[#FFFFFF] px-4' : 'text-[#718EBF]'}
+                            ${field.placeholder === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#3f3f3f] px-4' : 'text-[#718EBF]'}
+                            ${field.placeholder === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#282a2c] px-4' : 'text-[#718EBF]'}
+                            ${field.placeholder === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#282a2c] px-4' : 'text-[#718EBF]'}
                         `}
                             >{field.placeholder}</p>
                         </div>

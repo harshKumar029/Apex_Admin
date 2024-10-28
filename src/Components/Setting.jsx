@@ -8,7 +8,7 @@ const Setting = () => {
     };
 
     return (
-        <div className='w-[95%] m-auto mt-5 mb-28 sm:my-5'>
+        <div className='w-[95%] m-auto my-5'>
             {/* Tabs */}
             <div className="flex justify-start space-x-4 mb-5">
                 <button

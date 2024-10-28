@@ -27,8 +27,8 @@ const Status = 'Pending';
     ];
 
     return (
-        <div className='w-[95%] m-auto mt-5 mb-28 sm:my-5'>
-            <div className="flex items-center justify-between py-4 w-full">
+        <div className='w-[95%] m-auto my-5'>
+            <div className="flex sm:items-center flex-col gap-3 sm:flex-row justify-between py-4 w-full">
                 <div className='flex gap-3'>
                     <div>
                         <svg onClick={() => navigate('/ManageLeads')} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@ const Status = 'Pending';
                         </p>
                     </div>
                 </div>
-                <div className=' flex gap-6 items-center'>
+                <div className=' flex gap-6 items-center justify-between sm:justify-normal'>
                     <div className=' flex gap-3 items-center'>
                     <h4 className=' font-medium text-2xl text-[#343C6A]'>Status</h4>
                     <p
