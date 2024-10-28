@@ -22,7 +22,7 @@ const Dashboard = () => {
 
 
   return (
-    <div className='w-[95%] m-auto mt-5 mb-28 sm:my-5'>
+    <div className='w-[95%] m-auto my-5'>
 
         {/* Row of Cards */}
         <div className="flex flex-col sm:flex-row sm:space-x-4 mb-6">
