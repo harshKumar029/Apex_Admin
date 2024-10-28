@@ -1,7 +1,7 @@
 // import React from 'react'
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ApexLogo from '../../assets/icon/ApexLogo.svg'
+import ApexLogo from '../../assets/icon/Apexlogo.svg'
 import Apexlogoblue from '../../assets/icon/Apexlogoblue.svg'
 import Google from '../../assets/icon/Google.svg'
 import Facebook from '../../assets/icon/Facebook.svg'
