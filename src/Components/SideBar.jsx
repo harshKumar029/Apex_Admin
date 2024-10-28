@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Dashboard from "../assets/icon/SidebarIcon/Dashboard.svg";
 import Logout from "../assets/icon/SidebarIcon/Logout.svg";
-import Mywebsite from "../assets/icon/SidebarIcon/Mywebsite.svg";
+import Mywebsite from "../assets/icon/SidebarIcon/MyWebsite.svg";
 import ManageLeads from "../assets/icon/SidebarIcon/ManageLeads.svg";
 import ManageAgents from "../assets/icon/SidebarIcon/ManageAgents.svg";
 import WithdrawalRequest from "../assets/icon/SidebarIcon/WithdrawalRequest.svg";
