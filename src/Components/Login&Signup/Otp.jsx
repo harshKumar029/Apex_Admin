@@ -1,7 +1,7 @@
 // import React from 'react'
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ApexLogo from '../../assets/icon/SidebarIcon/Apexlogo.svg'
+import ApexLogo from '../../assets/icon/SidebarIcon/ApexLogo.svg'
 import Apexlogoblue from '../../assets/icon/Apexlogoblue.svg'
 import Leftarrow from '../../assets/icon/Leftarrow.svg'
 import CardImg from '../../assets/img/CardImg.svg'
