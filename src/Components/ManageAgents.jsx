@@ -60,7 +60,6 @@ const ManageAgents = () => {
   // Calculate total pages based on filtered data
   const filteredData = getFilteredData(activeFilter);
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-  console.log(filteredData, totalPages, 'thisnsibd');
   // Get the current items for the table based on pagination
   const currentItems = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
@@ -146,9 +145,9 @@ const ManageAgents = () => {
                       className={` text-sm px-6 py-1 rounded-full 
                          ${row.Level === 'Diamond' ? 'bg-gradient-to-t from-[#44A08D] to-[#093637] text-[#FFFFFF]' : 'text-[#718EBF]'}
                          ${row.Level === 'Copper' ? 'bg-gradient-to-t from-[#554023] to-[#C99846] text-[#FFFFFF]' : 'text-[#718EBF]'}
-                         ${row.Level === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#3f3f3f]' : 'text-[#718EBF]'}
-                         ${row.Level === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#282a2c]' : 'text-[#718EBF]'}
-                         ${row.Level === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#282a2c]' : 'text-[#718EBF]'}
+                         ${row.Level === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#353535]' : 'text-[#718EBF]'}
+                         ${row.Level === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#353535]' : 'text-[#718EBF]'}
+                         ${row.Level === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#353535]' : 'text-[#718EBF]'}
                      `}>
                       {row.Level}
                     </button>
@@ -244,9 +243,9 @@ const ManageAgents = () => {
                     className={` text-sm  py-1 rounded-full 
                       ${row.Level === 'Diamond' ? 'bg-gradient-to-t from-[#44A08D] to-[#093637] text-[#FFFFFF]' : 'text-[#718EBF]'}
                       ${row.Level === 'Copper' ? 'bg-gradient-to-t from-[#554023] to-[#C99846] text-[#FFFFFF]' : 'text-[#718EBF]'}
-                      ${row.Level === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#2a353f]' : 'text-[#718EBF]'}
-                      ${row.Level === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#2a353f]' : 'text-[#718EBF]'}
-                      ${row.Level === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#2a353f]' : 'text-[#718EBF]'}
+                      ${row.Level === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#353535]' : 'text-[#718EBF]'}
+                      ${row.Level === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#353535]' : 'text-[#718EBF]'}
+                      ${row.Level === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#353535]' : 'text-[#718EBF]'}
                   `}
                   >{row.Level}</p></td>
                 <td  className="px-4 py-3 relative"

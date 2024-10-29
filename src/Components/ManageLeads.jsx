@@ -61,7 +61,6 @@ const ManageLeads = () => {
   // Calculate total pages based on filtered data
   const filteredData = getFilteredData(activeFilter);
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-  console.log(filteredData, totalPages, 'thisnsibd');
   // Get the current items for the table based on pagination
   const currentItems = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
