@@ -1,4 +1,4 @@
-// import React from 'react'
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApexLogo from '../../assets/icon/Apexlogo.svg'
@@ -24,8 +24,8 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission
-        console.log('Form Data Submitted:', formData);
+        
+       //you can proceed with form data in this function.
     };
     return (
         <div className='md:bg-blue-primary bg-white flex h-[100vh]'>

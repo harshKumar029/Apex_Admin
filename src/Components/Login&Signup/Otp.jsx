@@ -1,4 +1,4 @@
-// import React from 'react'
+
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApexLogo from '../../assets/icon/SidebarIcon/ApexLogo.svg'
@@ -75,7 +75,7 @@ const Otp = () => {
                                         onKeyDown={(e) => {
                                             if (e.key === 'Backspace') {
                                                 // Handle backspace key
-                                                e.preventDefault(); // Prevent the default backspace behavior
+                                                e.preventDefault(); // it is use to Prevent the default backspace behavior
                                                 handleChange(index, '', true);
                                             }
                                         }}

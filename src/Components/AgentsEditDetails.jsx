@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const AgentsEditDetails = () => {
     const navigate = useNavigate();
 
-    // Example status for demonstration; you can replace this with dynamic data as needed.
     const Status = 'Diamond';
 
     const inputFields = [

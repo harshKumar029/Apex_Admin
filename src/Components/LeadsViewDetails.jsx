@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 const ViewDetails = () => {
     const navigate = useNavigate()
 
-    // Sample data that would typically come from an API or state
+    
     const inputFields = [
         { label: 'Lead Name', placeholder: 'Rohit Sharma' },
         { label: 'Amount', placeholder: '10 Lakh' },

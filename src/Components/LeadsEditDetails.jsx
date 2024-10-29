@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const EditDetails = () => {
     const navigate = useNavigate();
 const Status = 'Pending';
-    // Input fields data
+   
     const inputFields = [
         { label: 'Customer Name', placeholder: 'Rohit Sharma' },
         { label: 'Bank Chosen', placeholder: 'SBI' },

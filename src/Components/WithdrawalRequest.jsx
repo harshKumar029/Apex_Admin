@@ -45,7 +45,7 @@ const WithdrawalRequest = () => {
   
   
 
-  // Filtering function based on active filter
+
   const getFilteredData = (filter) => {
     switch (filter) {
       case 'Approved Leads':
@@ -61,17 +61,15 @@ const WithdrawalRequest = () => {
     }
   };
 
-
-  // Calculate total pages based on filtered data
   const filteredData = getFilteredData(activeFilter);
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
-  // Get the current items for the table based on pagination
+
   const currentItems = filteredData.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
 
-  // Handlers for pagination
+
   const handleNextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(prev => prev + 1);

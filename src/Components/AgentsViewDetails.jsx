@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 const AgentsViewDetails = () => {
         const navigate = useNavigate()
     
-        // Sample data that would typically come from an API or state
         const inputFields = [
             { label: 'Agent Name', placeholder: 'Rohit Sharma' },
             { label: 'Joining Date', placeholder: '3/5/2023' },
@@ -50,9 +49,9 @@ const AgentsViewDetails = () => {
                                 className={`text-base  rounded-full 
                             ${field.placeholder === 'Diamond' ? 'bg-gradient-to-t from-[#44A08D] to-[#093637] text-[#FFFFFF] px-4' : 'text-[#718EBF]'}
                             ${field.placeholder === 'Copper' ? 'bg-gradient-to-t from-[#554023] to-[#C99846] text-[#FFFFFF] px-4' : 'text-[#718EBF]'}
-                            ${field.placeholder === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#3f3f3f] px-4' : 'text-[#718EBF]'}
-                            ${field.placeholder === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#282a2c] px-4' : 'text-[#718EBF]'}
-                            ${field.placeholder === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#282a2c] px-4' : 'text-[#718EBF]'}
+                            ${field.placeholder === 'Platinum' ? 'bg-gradient-to-t from-[#403B4A] to-[#E7E9BB] text-[#353535] px-4' : 'text-[#718EBF]'}
+                            ${field.placeholder === 'Gold' ? 'bg-gradient-to-t from-[#F2994A] to-[#F2C94C] text-[#353535] px-4' : 'text-[#718EBF]'}
+                            ${field.placeholder === 'Silver' ? 'bg-gradient-to-t from-[#ABBAAB] to-[#FFFFFF] text-[#353535] px-4' : 'text-[#718EBF]'}
                         `}
                             >{field.placeholder}</p>
                         </div>
