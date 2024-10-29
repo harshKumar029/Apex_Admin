@@ -1,4 +1,4 @@
-// src/Components/Dashboard/Dashboard.jsx
+
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -12,7 +12,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
 
-  // Card Data
+
   const cardData = [
     { id: 1, title: 'New Leads', data: '435', icon: NewLeads },
     { id: 2, title: 'Approved Leads', data: '137', icon: ApprovedLeads },
