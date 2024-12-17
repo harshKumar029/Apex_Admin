@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth'; // Import signOut from Firebase
+import { auth } from '../firebase'; // Import your Firebase auth instance
 import Dashboard from "../assets/icon/SidebarIcon/Dashboard.svg";
 import Logout from "../assets/icon/SidebarIcon/Logout.svg";
 import Mywebsite from "../assets/icon/SidebarIcon/MyWebsite.svg";
@@ -15,14 +17,26 @@ const SideBar = () => {
   const { isOpen, setIsOpen, setIsOpenProfile } = useSidebar();
   const sidebarRef = useRef(null);
 
+  // Updated menu items: For 'My website' instead of a path, we'll store a URL field.
   const menuItems = [
     { icon: Dashboard, label: "Dashboard", path: "/" },
     { icon: ManageLeads, label: "Manage Leads", path: "/ManageLeads" },
     { icon: ManageAgents, label: "Manage Agents", path: "/ManageAgents" },
     { icon: WithdrawalRequest, label: "Withdrawal Request", path: "/WithdrawalRequest" },
-    { icon: Mywebsite, label: "My website", path: "/Mywebsite" },
+    // Instead of a path within React Router, we now have a URL that should open in a new tab.
+    { icon: Mywebsite, label: "My website", url: "https://apexin.in/" },
     { icon: setting, label: "Setting", path: "/setting" },
   ];
+
+  // Logout function
+  const handleLogout = async () => {
+    try {
+      await signOut(auth); // Sign out the user
+      navigate("/login"); // Redirect to login page after logout
+    } catch (error) {
+      console.error("Error logging out:", error.message);
+    }
+  };
 
   const handleClickOutside = (event) => {
     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -37,19 +51,19 @@ const SideBar = () => {
     };
   }, []);
 
+  const handleItemClick = (item) => {
+    // If item has a 'url' property, open in a new tab
+    if (item.url) {
+      window.open(item.url, "_blank");
+    } else {
+      // Otherwise navigate to the given path
+      navigate(item.path);
+    }
+    setIsOpen(false); // Close the sidebar when an item is clicked
+  };
+
   return (
-    <div className=' z-[1000]' onClick={()=> setIsOpenProfile(false)}>
-      {/* Toggle Button */}
-      {/* <button
-        className="md:hidden p-6"
-        onClick={() => setIsOpen(true)}
-      >
-        <svg className='w-10' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-
-      </button> */}
-
+    <div className=' z-[1000]' onClick={() => setIsOpenProfile(false)}>
       {/* Sidebar */}
       <div
         ref={sidebarRef}
@@ -57,22 +71,16 @@ const SideBar = () => {
       >
         <div className="border-r-[0.5px] border-[#DEE2E6] text-[#ADB5BD] h-full flex flex-col">
           <div className="w-fit mx-auto">
-            <div className=' flex justify-between ml-1 mt-4 '>
-              <img className=" w-16" src={ApexLogo} alt="ApexLogo" />
+            <div className='flex justify-between ml-1 mt-4 '>
+              <img className="w-16" src={ApexLogo} alt="ApexLogo" />
               {/* Toggle Button */}
               <button
                 className="md:hidden p-2"
                 onClick={() => setIsOpen(false)}
               >
-                {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                </svg> */}
-
-                <svg className=' w-6' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <svg className='w-6' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 12H4M4 12L10 18M4 12L10 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-
-
               </button>
             </div>
             <div className="space-y-4">
@@ -81,10 +89,7 @@ const SideBar = () => {
                   <li
                     key={index}
                     className="menu-item flex items-center py-[.6rem] hover:text-[#063E50] cursor-pointer"
-                    onClick={() => {
-                      navigate(item.path);
-                      setIsOpen(false); // Close the sidebar when an item is clicked
-                    }}
+                    onClick={() => handleItemClick(item)}
                   >
                     <img
                       src={item.icon}
@@ -98,10 +103,13 @@ const SideBar = () => {
             </div>
           </div>
 
-          <div className="mt-auto ">
+          <div className="mt-auto">
             <hr className='border-t border-[#ADB5BD] mb-1' />
             <div className="w-fit mx-auto space-y-4 py-2">
-              <button className="flex items-center rounded-lg px-2 gap-2">
+              <button
+                className="flex items-center rounded-lg px-2 gap-2"
+                onClick={handleLogout} // Logout function called here
+              >
                 <img className="w-[1.125rem] mr-2" src={Logout} alt="Logout" />
                 Logout
               </button>
