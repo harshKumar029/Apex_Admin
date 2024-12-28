@@ -3,14 +3,14 @@
 import React from 'react';
 import Search from '../assets/icon/Search.svg';
 
-const Searchbar = ({ searchQuery, setSearchQuery }) => {
+const HeaderSearchbar = ({ searchQuery, onChange }) => {
   return (
-    <div className='relative '>
+    <div className='relative'>
       <input
         type='text'
         value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        placeholder='Search for something'
+        onChange={onChange}
+        placeholder='Search for Leads'
         className='placeholder:font-normal placeholder:text-[13px] bg-white_custom sm:placeholder:text-[16px] placeholder:text-[#ADB5BD] bg-[#F8FAFA] rounded-3xl px-16 py-4 sm:py-1.5 outline-none w-full'
       />
       <img
@@ -22,4 +22,4 @@ const Searchbar = ({ searchQuery, setSearchQuery }) => {
   );
 };
 
-export default Searchbar;
+export default HeaderSearchbar;
