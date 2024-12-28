@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
 import AuthLayout from './Components/AuthLayout';
 import Signup from './Components/Login&Signup/Signup';
@@ -42,10 +43,19 @@ function App() {
     );
   }
 
+  if (isLoading) {
+    return (
+      <div className="bg-light-dashboard-gray h-screen flex justify-center items-center">
+        <img src="/loading.gif" alt="Loading..." style={{ width: '100px', height: '100px' }}/>
+      </div>
+    );
+  }
+
   return (
     <Router>
       <ScrollToTop />
       <Routes>
+        {/* Public Routes */}
         {/* Public Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -195,6 +205,8 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
+  );
+}
   );
 }
 

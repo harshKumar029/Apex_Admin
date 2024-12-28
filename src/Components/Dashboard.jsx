@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db, auth } from '../firebase'; // Ensure this path is correct based on your project structure
@@ -8,6 +9,7 @@ import ApprovedLeads from '../assets/icon/DashboardIcon/ApprovedLeads.svg';
 import NewLeads from '../assets/icon/DashboardIcon/NewLeads.svg';
 import RejectedLeads from '../assets/icon/DashboardIcon/RejectedLeads.svg';
 import TotalAgents from '../assets/icon/DashboardIcon/TotalAgents.svg';
+import DashboardSuccessImg from '../assets/img/DashboardSucessimg.svg';
 import DashboardSuccessImg from '../assets/img/DashboardSucessimg.svg';
 
 const Dashboard = () => {
